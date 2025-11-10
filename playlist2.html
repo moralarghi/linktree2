@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body{
+            height: 100%;
+        }
+
+
+        nav ul li{
+            display: inline-block;
+            background-color: #f5efeb;
+        }
+
+        aside{
+            background-color:#F3EDE4;
+            display: inline-block;
+            width: 20%;
+            height: 100%;
+        }
+
+        aside li{
+            list-style-type: none;
+            background-color: #F3EDE4;
+        }
+
+        aside li a {
+            background-color: #e5dccd;
+            padding: 10px 20px;
+            text-decoration: none;
+            line-height: 50px;
+            color: #2C3E50;
+        }
+        
+
+        main{
+            background-color:#F3EDE4 ;
+            display: inline-block;
+            width: 75%;
+            height: 100%;
+            vertical-align: top;
+        }
+
+        main p {
+            color: #4D5D6C;
+            background-color:#F7F1E8 ;
+            text-align: left;
+            margin-left: 10px;
+        }
+        main ul{
+            background-color: #F7F1E8;
+        }
+        main ul li {
+            text-align: left;
+            list-style-type: none;
+            margin-left: 30px;
+            color: #4D5D6C;
+
+        }
+        .container {
+            background-color: #FAF9F6;
+            height: 100%;
+        }
+
+        footer{
+            background-color: aliceblue;
+            height: 20vh;
+            text-align: center;
+        }
+        .columna{
+            display: inline-block;
+            width: 25vw;
+            height: 100%;
+            vertical-align: top;
+        }
+
+        .columna li {
+            list-style-type: none;
+        }
+
+        #columna2 {
+            text-align: left;
+        }
+
+        #columna3 li {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+<body>
+    <ul id="barra">
+        <img class="logo" src="img/avion.png" alt="avion">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobremi.html">Sobre mi</a></li>
+        <li><a href="tablas.html">Tabla</a></li>
+        <li><a href="trivia/trivia.html">Trivia</a></li>
+        <li><a href="lista.html">Lista</a></li>
+        <li><a href="playlist.html">Playlist</a></li>
+    </ul>
+
+
+    <div class="container">
+        <aside>
+           <ul>
+                <li><a href="playlist.html">Pomodoro 50-10 * Día lluvioso</a></li>
+                <li><a href="playlist1.html">Pomodoro 50-10 * Día soleado</a></li>
+                <li><a href="playlist2.html">Pomodoro 25-5 * Día nublado</a></li>
+                <li><a href="playlist3.html">Pomodoro 25-5 * Día lluvioso</a></li>
+                <li><a href="playlist4.html">Pomodoro 25-5 * En Osaka, Japón </a></li>
+            </ul>
+        </aside>
+        <main>
+            <h1 id="tplaylist">Study with me ✦ lo que me acompaña a estudiar</h1>
+            <p>Estudiar sola nunca fue lo mío, así que encontré en los  <i>study with me </i> una forma de tener compañía y motivación.</p>
+            <p>En esta página vas a encontrar distintos videos que me acompañan mientras estudio, cada uno pensado para diferentes preferencias y estilos de concentración.</p>
+            <p>Son sesiones basadas en la técnica Pomodoro:</p> 
+            <ul>
+                <li>✦ 50 minutos de enfoque + 10 de descanso</li>
+                <li>✦ 25 minutos de enfoque + 5 de descanso</li>
+            </ul> <br>
+            <iframe width="890" height="500" src="https://www.youtube.com/embed/37GRg-mz9zI?si=-GhPnLAfQHMpPwR6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </main>
+    </div>
+
+    <footer>
+        <div class="columna">
+            <h3>Mora Larghi</h3>
+        </div>
+        <div class="columna" id="columna2">
+            <h3>Mapa del Sitio</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobremi.html">Sobre Mi</a></li>
+                <li><a href="tablas.html">Tabla</a></li>
+                <li><a href="trivia/trivia.html">Trivia</a></li>
+                <li><a href="lista.html">Lista</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+            </ul>
+        </div>
+        <div class="columna" id="columna3">
+            <h3>Redes Sociales</h3>
+            <ul>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+
+            </ul>
+            <a href="#">Volver arriba</a>
+        </div>
+    </footer>
+</body>
+</html>

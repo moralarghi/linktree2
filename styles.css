@@ -1,0 +1,221 @@
+.index { 
+    background-color: #567c8d;
+    color:#f5efeb; 
+    margin: 0; 
+    text-align: center; 
+    font-family: 'Pinyon Script', cursive; 
+    font-weight: 400;
+    height: 70px;
+    line-height: 70px;
+  }
+
+body {
+  margin: 0; 
+  text-align: center; 
+  background-color: #f5efeb;
+}
+
+p{
+  color: #567c8d;
+}
+
+.parrafo2 {
+  font-size: 24px; 
+  color:#567c8d;
+}
+
+blockquote {
+  font-size: 28px; 
+  color:#567c8d
+}
+
+h3 {
+  font-family:'Times New Roman', Times, serif
+}
+  
+
+/* para sobre mi */
+.pag2 {
+  font-family: "Trirong", serif;
+  font-weight: 500;
+  background-color: #567c8d;
+  color:#f5efeb; 
+  font-weight: 400;
+  height: 70px;
+  line-height: 70px;
+  margin: 0; 
+}
+.pag22 {
+  font-family: "Bentham", serif;
+  font-weight: 400;
+  font-style: normal; 
+  background-color: #bde0fe; size: 15px; color: #274b63; margin-left: 10px; margin-right: 10px;
+}
+
+.parrafosm {
+  font-family: "Bentham", serif;
+  font-weight: 400;
+  font-style: normal; background-color:#bde0fe3f; color:#274b63; margin-left: 50px; margin-right: 50px; font-size: 20px;
+}
+
+/* para trivia */
+
+.trivia {
+  background-color: #F6F3EF;
+}
+
+.titulotrivia {
+  background-color: #BFD3C1; 
+  color: #22352B; 
+  margin: 0;
+  font-family: 'Pinyon Script', cursive; 
+  height: 70px;
+  line-height: 70px;
+
+}
+
+.botoncomenzar {
+  font-size: 30px; 
+  color: #2F2715; 
+  background-color: #D7C58B; 
+  text-decoration: none; 
+  padding:10px 10px; 
+  border-radius: 40px; 
+  box-shadow: 8px 8px 10px  #f0e3ba
+}
+
+.nivel {
+  background-color: #BFD3C1; 
+  color: #22352B;
+}
+
+.pregunta{
+  width: 500px;
+  background-color:#FBE8E4; 
+  color:#5E4348; 
+  padding:10px 14px; 
+  border-radius:12px ; 
+  margin: 0; 
+  margin-bottom: 10px;
+  margin-left: 100px; 
+  margin-right: 100px;
+}
+
+.fotostrivia {
+  border-radius: 20px;
+}
+
+.subtrivia {
+  color: #3F2D14;
+}
+
+/* para barra en pagina principal */
+#barra {
+  background-color:  #90b3c4 ;
+  margin: 0;
+  text-align: center;
+}
+#barra li {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+}
+
+#barra li a {
+  background-color: aliceblue;
+  padding: 10px 20px;
+  text-decoration: none;
+  line-height: 50px;
+}
+.logo {
+  height: 50px;
+  float: left;
+}
+
+/* para tablas */
+th, td {
+  border: 1px solid  #90b3c4 ;
+  border-radius: 10px;
+}
+
+/* para ganaste-perdiste de trivia*/
+
+.ganasteperdiste {
+  font-family: 'Pinyon Script', cursive;
+  background-color:#BFD3C1; 
+  color:#22352B; 
+  padding:8px 16px; 
+  border-radius:16px; 
+  margin:18px;
+}
+
+.cartelfelicitacionesperdiste {
+  width: 600px;
+  background-color:#FBE8E4; 
+  color:#5E4348; 
+  padding:10px 14px; 
+  border-radius:12px; 
+  margin:10px; 
+  margin-bottom: 30px;
+
+
+}
+
+.botones {
+  background-color: #BFD3C1; 
+  color: #22352B ;
+  text-decoration: none; 
+  padding:10px 10px; 
+  border-radius: 20px; 
+  box-shadow: 8px 8px 10px  #e1efe2 ;
+
+}
+
+/* para playlist */
+
+#tplaylist {
+  font-family: "Trirong", serif;
+  background-color: #e5dccd;
+  font-weight: 500;
+  color:#2C3E50; 
+  text-align: center; 
+  height: 70px;
+  line-height: 70px;
+}
+
+
+/* para footer */
+
+footer{
+  background-color: aliceblue;
+  height: 25vh;
+  text-align: center;
+}
+.columna{
+  display: inline-block;
+  width: 25vw;
+  height: 100%;
+  vertical-align: top;
+}
+
+.columna li {
+  list-style-type: none;
+}
+
+#columna2 {
+  text-align: center;
+}
+
+#columna3 li {
+  display: inline-block;
+}
+
+#listas {
+  text-decoration: none;
+  list-style-type: square; 
+  font-size:18px; 
+  color:#567c8d;
+  text-align: left;
+
+}

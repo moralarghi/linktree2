@@ -1,0 +1,29 @@
+h1{
+    font-family:'Times New Roman', Times, serif;
+    color: #567c8d;
+    font-size: 20px;
+    font-style: bold;
+    font-weight: 100;
+}
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    color: #567c8d;
+    font-size: 15px;
+    margin-bottom: 30px;
+
+}
+
+a{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #567c8d;
+    border-radius: 50px;
+    font-size: 17px;
+    color: #f5efeb ;
+    text-decoration: none;
+    display: inline-block;
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 10px;
+}

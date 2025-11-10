@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuquén, Argentina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+       nav ul {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+            background-color:#567c8d;
+            height: 56px;
+            justify-content: end;
+            align-items: center;
+            position: relative;
+            padding-right: 6px;
+       }
+       nav a{
+            background-color: aliceblue;
+            color: #567c8d;
+            padding: 10px 24px;
+            border-radius: 12px;
+            box-shadow: 4px 4px 8px rgba(86,124,141,.30);
+            position: relative;
+            right: 10px;
+            text-decoration: none;
+       }
+       nav a:hover{ background-color: #ffafcc; }
+       #logo{
+            position: absolute;
+            left: 10px;
+            background-color: unset;
+            padding: 0;
+            box-shadow: none;
+       }
+
+       main{
+            display: flex;
+            gap: 24px;
+            max-width: 1150px;
+            width: 92%;
+            margin: 24px auto;
+       }
+
+       .feed{
+            width: 100%;
+       }
+
+       .a {
+            background-color:aliceblue;
+            margin: 0 0 16px; 
+            text-align: center; 
+            font-family: 'Pinyon Script', cursive; 
+            font-weight: 700;
+            height: 70px;
+            line-height: 70px;
+            font-size: 28px;
+            border-radius: 20px;
+            box-shadow: 6px 6px 10px rgba(86,124,141,0.20);
+       }
+
+       .feed article{
+            background-color:#fbf5f5a9;
+            border-radius: 20px;
+            box-shadow: 6px 6px 10px rgba(86,124,141,0.20);
+            padding: 20px;
+            margin-bottom: 24px;
+            text-align: left;
+       }
+       .feed article h1{
+            font-size: 28px;
+            color: #ffafcc;
+            margin-bottom: 6px;
+       }
+       .meta{
+            color:#486775;
+            margin-bottom: 10px;
+       }
+
+       .hero{
+            display:block;
+            max-width:100%;
+            height:600px;
+            border-radius:16px;
+            box-shadow:4px 4px 8px rgba(86,124,141,.30);
+            margin:10px auto 16px;
+       }
+
+       .galeria{
+            display:flex;
+            gap:16px;
+            flex-wrap:wrap;
+            margin: 10px 0 10px;
+       }
+       .galeria img{
+            display:block;
+            width: calc(33.333% - 10.7px); 
+            max-width:100%;
+            height:auto;
+            border-radius:16px;
+            box-shadow:4px 4px 8px rgba(86,124,141,.30);
+       }
+
+       .bloque{
+            background:#ffffffa9;
+            border-radius:16px;
+            box-shadow:6px 6px 10px rgba(86,124,141,.20);
+            padding:16px;
+            margin:16px 0;
+            color:#486775;
+       }
+
+       .volver{
+            display: inline-block;
+            margin-top: 8px;
+            background: #bde0fe;
+            color: #567c8d;
+            padding: 8px 14px;
+            border-radius: 16px;
+            text-decoration: none;
+            box-shadow: 4px 4px 8px rgba(86,124,141,.30);
+       }
+       .volver:hover{ background:#ffafcc; }
+
+       footer{
+            background-color:  #eaf6ff;
+            text-align: center;
+            padding: 30px 10px;   
+            display: flex;              
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;       
+       }
+       .columna{
+            display: flex;
+            flex-direction: column;
+            width: 280px;
+            min-width: 220px; 
+            vertical-align: top;
+            text-align: left;
+            padding: 0 10px;
+       }
+       footer h3{ margin-top:0; color:#567c8d; }
+       .columna ul{ padding-left:18px; margin:8px 0 0; }
+       .columna li{ list-style-type:none; margin:6px 0; }
+       #columna2{ text-align:left; }
+       #columna3 li{ text-align:left; }
+       footer a{
+            color:#567c8d; text-decoration:none; border-radius:8px; padding:2px 4px;
+       }
+       footer a:hover{ background-color:#ffafcc; color:#567c8d; }
+
+       @media(max-width: 768px) {
+            nav ul{
+                flex-direction: column;
+                height: 100%;
+                text-align: center;
+            }
+            nav li { width: 100%; }
+            nav a{ display: inline-block; width: 100%; }
+            #logo{ display: none; }
+            main{ flex-direction: column; }
+            .feed{ width: 100%; }
+            .hero{ width: 90%; }
+            .galeria img{ width: 48%; } 
+       }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="#" id="logo"><img width="40px" src="img/avion.png" alt="Logo avion"></a>
+            <li><a href="linktree.html">Linktree</a></li>
+            <li><a href="blog.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de </a></li>
+            <li><a href="publicaciones.html">Publicaciones </a></li>
+            <li><a href="contacto.html">Contacto </a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="feed">
+            <article>
+                <h1 class="a">Mis lugares favoritos en el mundo</h1>
+                <h1>Neuquén, Argentina</h1>
+                <p class="meta">Publicado por <a href="contacto.html">Mora Larghi</a> en Octubre 2025</p>
+
+                <img src="img/Bariloche.png" alt="Nueva York" class="hero">
+
+                <div class="bloque">
+                    <p>Neuquén me regaló una sensación de paz difícil de describir. Después del ruido y el ritmo de la ciudad, acampar entre montañas, lagos y silencio fue como resetear todo. El aire frío, el reflejo del sol en el agua y el olor a pino me hicieron sentir que el tiempo se desaceleraba. Cada amanecer parecía una postal distinta del mismo paisaje.</p>
+                </div>
+
+                <div class="galeria">
+                    <img src="img/BRC 1.png" alt="NQ foto 1">
+                    <img src="img/BRC 2.png" alt="NQ foto 2">
+                    <img src="img/BRC 7.png" alt="NQ foto 3">
+                </div>
+
+                <div class="bloque">
+                    <p>El Lago Hermoso fue mi rincón favorito: el agua tan clara que reflejaba el cielo y las noches llenas de estrellas. En el Lago Pichi Traful, acampar frente al agua fue un sueño; despertar y ver la neblina flotando sobre el lago se sintió casi mágico. Más al sur, en Bariloche, las cabañas entre los árboles y las caminatas por cascadas me recordaron lo simple que puede ser sentirse feliz. Tip: no te apures. Caminá, escuchá el río y dejá que el lugar te muestre su ritmo.</p>
+                </div>
+
+                <div class="galeria">
+                    <img src="img/BRC 4.png" alt="NQ foto 4">
+                    <img src="img/BRC 5.png" alt="NQ foto 5">
+                    <img src="img/BRC 6.png" alt="NQ foto 6">
+                </div>
+
+                <div class="bloque">
+                    <p>Neuquén es de esos lugares que te enseñan a mirar más despacio. Me fui con el alma liviana, con olor a bosque y ganas de volver. Cada rincón del sur tiene algo que contar, y este viaje fue solo el comienzo. Si te gustó este recorrido, te invito a seguir leyendo mis otros destinos favoritos.</p>
+                </div>
+
+                <a href="publicaciones.html" class="volver">← Volver a publicaciones</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="columna">
+            <h3>Mora Larghi</h3>
+        </div>
+        <div class="columna" id="columna2">
+            <h3>Mapa del Sitio</h3>
+            <ul>
+                <li><a href="blog.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li><a href="publicaciones.html">Publicaciones</a></li>
+            </ul>
+        </div>
+        <div class="columna" id="columna3">
+            <h3>Redes Sociales</h3>
+            <ul style="text-decoration: none;">
+                <li><a href="https://www.linkedin.com/in/mora-larghi-930a8a344/">Linkedin</a></li>
+                <li><a href="https://www.flickr.com/photos/203505798@N07/">Flickr</a></li>
+            </ul>
+            <a href="#">Volver arriba</a>
+        </div>
+    </footer>
+</body>
+</html>
