@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bentham&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Trirong:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imgong/logo.ico">
+    
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #F2F2F2;
+            text-align: center;
+        }
+
+        header {
+            background-color: #485C43; 
+            padding: 10px;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #E89C1E; 
+        }
+
+        .hero {
+            background-image: url("imgong/fotohero2.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 200px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            flex-direction: column;
+        }
+
+        .botones {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #6B8E3C;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        section {
+            padding: 30px 15px;
+        }
+
+        h2 {
+            font-family: 'Marcellus', serif;
+            color: #6C5D3E; 
+        }
+
+        .cajas {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .caja {
+            background-color: white;
+            padding: 15px;
+            width: 350px;
+            border-radius: 10px;
+        }
+
+        .caja img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .texto {
+            padding: 10px 30px;
+            max-width: 750px;
+            margin: auto;
+            color: #485C43;
+        }
+
+        .footer {
+            background-color: #485C43; 
+            color: #F2F2F2;           
+            padding: 30px 20px;
+            text-align: center;
+            font-family: Poppins, sans-serif;
+        }
+
+        .footer a {
+            color: #F2F2F2;
+            text-decoration: none;
+            margin: 0 8px;
+            display: inline-block;
+            padding: 4px 6px;
+        }
+
+        .footer a:hover {
+            color: #E89C1E; 
+        }
+
+        .footertitulo {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footernav {
+            margin-bottom: 15px;
+        }
+
+        .btnacento {
+            background-color: #E89C1E;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btnacento:hover {
+            background-color: #F2F2F2;
+        }
+
+        .footerredes {
+            margin: 10px 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .hero {
+                height: 350px;
+            }
+
+            .caja {
+                width: 90%;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            .intro {
+                padding: 20px;
+            }
+        }
+
+
+        @media only screen and (min-width: 600px) and (max-width: 992px) {
+
+            .hero {
+                height: 450px;
+            }
+
+            .caja {
+                width: 45%;
+            }
+
+            nav a {
+                margin: 0 6px;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 style="margin:0; font-family: 'Marcellus', serif;">Guardianes del bosque</h1>
+        <nav>
+            <a href="homeong.html">El Refugio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="involucrate.html">Involucrate</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="app-js/appjs.html">App</a>
+            <a class="btn btnacento" href="involucrate.html">Sumate a la causa</a>
+
+
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2 style="font-size: 28px; font-weight: 600; color: white;">Nosotros</h2>
+
+    
+    </div>
+
+    <section>
+        <h2>Quiénes somos</h2>
+
+        <div class="cajas">
+            <div class="caja">
+                <img src="imgong/koala.jpg" alt="imagen misión">
+                <h2>MISIÓN</h2>
+                <p>Rescatamos animales silvestres heridos o en riesgo y trabajamos para rehabilitarlos y reinsertarlos en su hábitat natural mediante programas de cuidado y educación ambiental.</p>
+            </div>
+
+            <div class="caja">
+                <img src="imgong/osorojo.jpg" alt="imagen visión">
+                <h2>VISIÓN</h2>
+                <p>Convertirnos en una red nacional de centros de rescate que promueva la preservación de la biodiversidad y la convivencia responsable con la fauna nativa.</p>
+            </div>
+
+            <div class="caja">
+                <img src="imgong/rinoceronte.jpg" alt="imagen valores">
+                <h2>VALORES</h2>
+                <p>Creemos en el rol vital de cada especie en el equilibrio natural, en que la conservación comienza con la educación y que el bienestar animal es una responsabilidad compartida.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>HISTORIA</h2>
+        <p class="texto">Guardianes del bosque nació con el objetivo de dar respuesta a la creciente amenaza que enfrentan los animales silvestres debido a accidentes, tráfico ilegal, deforestación y pérdida de hábitat. Con un pequeño equipo de voluntarios comenzamos los primeros rescates y, con el tiempo, desarrollamos un programa integral para su recuperación. Hoy seguimos creciendo, guiados por el compromiso y el amor por la naturaleza.</p>
+    </section>
+
+     <section>
+        <h2>EQUIPO</h2>
+        <p>Trabajamos con veterinarios, especialistas en fauna, educadores ambientales y voluntarios que comparten la misma pasión: la protección de la vida silvestre.</p>
+        <div class="cajas">
+            <div class="caja">
+                <img src="imgong/equipo.jpg" alt="imagen misión">
+            </div>
+
+            <div class="caja">
+                <img src="imgong/equipo 2.jpg" alt="imagen visión">
+            </div>
+
+            <div class="caja">
+                <img src="imgong/equipo 3.jpg" alt="imagen valores">
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Transparencia</h2>
+        <p class="texto">Personas que confiaron en nuestro refugio y quisieron compartir su experiencia.</p>
+
+        <div class="cajas">
+            <div class="caja">
+                <img src="imgong/feliz2.jpg" alt="María R.">
+                <h3 style="color: #6C5D3E; margin-top: 10px;">María R.</h3>
+                <p style="color:#485C43;">“Me ayudaron cuando rescaté un zorrito herido. El equipo fue súper amable y dedicado.”</p>
+            </div>
+            <div class="caja">
+                <img src="imgong/feliz.jpg" alt="Bautista B.">
+                <h3 style="color:#6C5D3E; margin-top:10px;">Bautista B.</h3>
+                <p style="color:#485C43;">“Ser voluntario acá fue increíble. Vi cómo cuidan a cada animal con amor real.”</p>
+            </div>
+            <div class="caja">
+                <img src="imgong/feliz3.jpg" alt="Marina S.">
+                <h3 style="color:#6C5D3E; margin-top:10px;">Marina S.</h3>
+                <p style="color:#485C43;">“Acompañé la liberación de un pichón rehabilitado. Una experiencia hermosa.”</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p class="footertitulo">Guardianes del bosque</p>
+
+        <nav class="footernav">
+            <a href="homeong.html">El Refugio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="involucrate.html">Involucrate</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="app-js/appjs.html">App</a>
+            <a class="btnacento" href="involucrate.html">Sumate a la causa</a>
+        </nav>
+
+        <div class="footerredes">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+
+    </footer>
+
+</body>
+</html>

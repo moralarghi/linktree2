@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bentham&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Trirong:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imgong/logo.ico">
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #F2F2F2;
+            text-align: center;
+        }
+
+        header {
+            background-color: #485C43;
+            padding: 10px;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        nav a:hover {
+            color: #E89C1E; 
+        }
+
+        h2 {
+            font-family: 'Marcellus', serif;
+            color: #6C5D3E;
+            margin-top: 30px;
+        }
+
+        .intro {
+            padding: 20px;
+            max-width: 650px;
+            margin: auto;
+            color: #485C43;
+        }
+
+        .productos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .item {
+            background-color: white;
+            width: 250px;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+        }
+
+        .item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .precio {
+            color: #485C43;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .btn {
+            background-color: #E89C1E;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        
+
+        .footer {
+            background-color: #485C43; 
+            color: #F2F2F2;           
+            padding: 30px 20px;
+            text-align: center;
+            font-family: Poppins, sans-serif;
+        }
+
+        .footer a {
+            color: #F2F2F2;
+            text-decoration: none;
+            margin: 0 8px;
+            display: inline-block;
+            padding: 4px 6px;
+        }
+
+        .footer a:hover {
+            color: #E89C1E; 
+        }
+
+        .footertitulo {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footernav {
+            margin-bottom: 15px;
+        }
+
+        .btnacento {
+            background-color: #E89C1E;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btnacento:hover {
+            background-color: #F2F2F2;
+            color: #E89C1E;
+        }
+
+        .footerredes {
+            margin: 10px 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .hero {
+                height: 350px;
+            }
+
+            .caja {
+                width: 90%;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            .intro {
+                padding: 20px;
+            }
+        }
+
+
+        @media only screen and (min-width: 600px) and (max-width: 992px) {
+
+            .hero {
+                height: 450px;
+            }
+
+            .caja {
+                width: 45%;
+            }
+
+            nav a {
+                margin: 0 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 style="margin:0; font-family:'Marcellus', serif;">Guardianes del bosque</h1>
+        <nav>
+            <a href="homeong.html">El Refugio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="involucrate.html">Involucrate</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="app-js/appjs.html">App</a>
+            <a class="btn btnacento" href="involucrate.html">Sumate a la causa</a>
+
+        </nav>
+    </header>
+
+    <h2>Productos solidarios</h2>
+
+    <div class="intro">
+        Cada compra ayuda a financiar el rescate, la rehabilitación y el cuidado de animales silvestres.  
+        Llevate algo que te gusta y al mismo tiempo colaborá con nuestra misión.
+    </div>
+
+    <div class="productos">
+
+        <div class="item">
+            <img src="imgong/remera.png" alt="Remera">
+            <p><b>Remera Guardianes</b></p>
+            <p class="precio">$4500</p>
+            <p style="font-size:14px; color:#485C43;">Remera estampada con nuestro logo oficial.</p>
+            <a class="btn btnacento" href="#">Comprar</a>
+        </div>
+
+        <div class="item">
+            <img src="imgong/taza.png" alt="Taza">
+            <p><b>Taza del bosque</b></p>
+            <p class="precio">$2800</p>
+            <p style="font-size:14px; color:#485C43;">Taza cerámica con ilustración de fauna nativa.</p>
+            <a class="btn btnacento" href="#">Comprar</a>
+        </div>
+
+        <div class="item">
+            <img src="imgong/stickers2.png" alt="Sticker pack">
+            <p><b>Stickers</b></p>
+            <p class="precio">$1200</p>
+            <p style="font-size:14px; color:#485C43;">Pack de 10 stickers de animales en peligro de extinción.</p>
+            <a class="btn btnacento" href="#">Comprar</a>
+        </div>
+
+        <div class="item">
+            <img src="imgong/bolsa2.png" alt="Bolsa ecológica">
+            <p><b>Bolsa ecológica</b></p>
+            <p class="precio">$3000</p>
+            <p style="font-size:14px; color:#485C43;">Bolsa reutilizable con diseño de Guardianes del bosque.</p>
+            <a class="btn btnacento" href="#">Comprar</a>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p class="footertitulo">Guardianes del bosque</p>
+
+        <nav class="footernav">
+            <a href="homeong.html">El Refugio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="involucrate.html">Involucrate</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="app-js/appjs.html">App</a>
+            <a class="btnacento" href="involucrate.html">Sumate a la causa</a>
+        </nav>
+
+        <div class="footerredes">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+
+    </footer>
+
+</body>
+</html>

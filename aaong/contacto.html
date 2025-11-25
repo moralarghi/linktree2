@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardianes del Bosque</title>
+    <link rel="icon" type="image/x-icon" href="imgong/logo.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bentham&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Trirong:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imgong/logo.ico">
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #F2F2F2;
+            text-align: center;
+        }
+
+        header {
+            background-color: #485C43;
+            padding: 10px;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #E89C1E; 
+        }
+
+        .hero {
+            background-image: url("imgong/fotohero2.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        h2 {
+            font-family: 'Marcellus', serif;
+            color: #6C5D3E;
+        }
+
+        .intro {
+            padding: 30px 20px;
+            max-width: 600px;
+            margin: auto;
+            color: #485C43;
+        }
+
+        .proyectos {
+            padding: 30px 20px;
+        }
+
+        .cajas {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .caja {
+            background-color: #f2dfc1 ;
+            padding: 15px;
+            width: 350px;
+            border-radius: 10px;
+        }
+
+        .caja img {
+            width: 100%;
+            border-radius: 10px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+
+        .btn {
+            background-color: #6B8E3C;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .footer {
+            background-color: #485C43; 
+            color: #F2F2F2;           
+            padding: 30px 20px;
+            text-align: center;
+            font-family: Poppins, sans-serif;
+        }
+
+        .footer a {
+            color: #F2F2F2;
+            text-decoration: none;
+            margin: 0 8px;
+            display: inline-block;
+            padding: 4px 6px;
+        }
+
+        .footer a:hover {
+            color: #E89C1E; 
+        }
+
+        .footertitulo {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footernav {
+            margin-bottom: 15px;
+        }
+
+        .btnacento {
+            background-color: #E89C1E;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btnacento:hover {
+            background-color: #F2F2F2;
+        }
+
+        .footerredes {
+            margin: 10px 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .hero {
+                height: 350px;
+            }
+
+            .caja {
+                width: 90%;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            .intro {
+                padding: 20px;
+            }
+        }
+
+
+        @media only screen and (min-width: 600px) and (max-width: 992px) {
+
+            .hero {
+                height: 450px;
+            }
+
+            .caja {
+                width: 45%;
+            }
+
+            nav a {
+                margin: 0 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 style="margin:0; font-family:'Marcellus', serif;">Guardianes del bosque</h1>
+        <nav>
+            <a href="homeong.html">El Refugio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="involucrate.html">Involucrate</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="app-js/appjs.html">App</a>
+            <a class="btn btnacento" href="involucrate.html">Sumate a la causa</a>
+
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2 style="color:white;">Contactanos</h2>
+    </div>
+
+    <div class="intro">
+        Si querés comunicarte con Guardianes del bosque, acá tenés nuestros datos. Podés escribirnos, enviarnos un mensaje o seguirnos en nuestras redes para ver novedades del refugio.
+    </div>
+
+    <div class="proyectos">
+
+        <div class="cajas">
+            <div class="caja">
+                <h2>Correo electrónico</h2>
+                <p>guardianesdelbosque@ong.com</p>
+            </div>
+
+            <div class="caja">
+                <h2>Teléfono</h2>
+                <p>+54 4757-4757</p>
+            </div>
+
+            <div class="caja">
+                <h2>Redes sociales</h2>
+                <p>Instagram: @guardianesdelbosque</p>
+                <p>Facebook: Guardianes del bosque</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p class="footertitulo">Guardianes del bosque</p>
+
+        <nav class="footernav">
+            <a href="homeong.html">El Refugio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="involucrate.html">Involucrate</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="app-js/appjs.html">App</a>
+            <a class="btnacento" href="involucrate.html">Sumate a la causa</a>
+        </nav>
+
+        <div class="footerredes">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+
+    </footer>
+
+
+
+</body>
+</html>
