@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clase: Movimiento y Colisiones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bentham&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Trirong:ital,wght@1,500&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imgong/logo.ico">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #F2F2F2;
+            text-align: center;
+        }
+
+        header {
+            background-color: #485C43;
+            padding: 10px;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #E89C1E;
+        }
+
+        h2 {
+            font-family: 'Marcellus', serif;
+            color: #6C5D3E;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        .mapa {
+            display: grid;
+            grid-template-columns: repeat(20, 30px);
+            grid-template-rows: repeat(15, 30px);
+            border: 2px solid #333;
+            margin: 20px 0;
+            position: relative;
+            width: calc(20 * 30px);
+            background-color: #e8f5e8; /* Fondo verde claro para el bosque */
+
+            /* HACER EL MAPA MÁS GRANDE, AJUSTAR MARGENES TAMBIÉN */
+            transform: scale(1.2);
+            margin: 10vh auto;
+        }
+
+        .celda {
+            width: 30px;
+            height: 30px;
+        }
+
+        .vacio {
+            background: transparent;
+        }
+
+        .solido {
+            /* CAMBIAR ACÁ POR LA IMAGEN DEL ARBOL */
+            background-image: url('arbol.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            /* AJUSTAR TAMAÑO */
+            background-size: 30px;
+        }
+
+        .personaje {
+            width: 24px;
+            height: 24px;
+            background-image: url('jugador.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            transition: 0.1s;
+            z-index: 10;
+        }
+
+        .meta {
+            width: 24px;
+            height: 24px;
+            background-image: url('refugio.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            z-index: 5;
+            animation: brillo 1.5s infinite alternate;
+        }
+
+        .tigre {
+            width: 24px;  /* Cambiado a 24px para coincidir con las otras imágenes */
+            height: 24px; /* Cambiado a 24px para coincidir con las otras imágenes */
+            background-image: url('tigre.png');
+            background-repeat: no-repeat;
+            background-size: contain; /* Asegura que la imagen se ajuste al contenedor */
+            position: absolute;
+            z-index: 5;
+        }
+
+        .tigre-siguiendo {
+            transition: 0.2s;
+        }
+
+        @keyframes brillo {
+            from {
+                box-shadow: 0 0 5px #4CAF50;
+            }
+
+            to {
+                box-shadow: 0 0 15px #4CAF50, 0 0 20px #4CAF50;
+            }
+        }
+
+        .controles {
+            margin: 10px 0;
+        }
+
+        .tecla {
+            background: #eee;
+            padding: 5px 10px;
+            margin: 0 2px;
+            border: 1px solid #ccc;
+        }
+
+        .estado-llave {
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .llave-obtenida {
+            color: #4CAF50;
+        }
+
+        .llave-pendiente {
+            color: #FF9800;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .btn-reiniciar {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .btn-reiniciar:hover {
+            background: #45a049;
+        }
+
+        .btn {
+            background-color: #6B8E3C;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+        }
+
+
+        .footer {
+            background-color: #485C43;
+            color: #F2F2F2;
+            padding: 30px 20px;
+            text-align: center;
+            font-family: Poppins, sans-serif;
+        }
+
+        .footer a {
+            color: #F2F2F2;
+            text-decoration: none;
+            margin: 0 8px;
+            display: inline-block;
+            padding: 4px 6px;
+        }
+
+        .footer a:hover {
+            color: #E89C1E;
+        }
+
+        .footertitulo {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footernav {
+            margin-bottom: 15px;
+        }
+
+        .btnacento {
+            background-color: #E89C1E;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btnacento:hover {
+            background-color: #F2F2F2;
+        }
+
+        .footerredes {
+            margin: 10px 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                height: 100%;
+                text-align: center;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav a {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="margin:0; font-family:'Marcellus', serif;">Guardianes del bosque</h1>
+        <nav>
+            <a href="../homeong.html">El Refugio</a>
+            <a href="../nosotros.html">Nosotros</a>
+            <a href="../proyectos.html">Proyectos</a>
+            <a href="../involucrate.html">Involucrate</a>
+            <a href="../contacto.html">Contacto</a>
+            <a href="#">App</a>
+            <a class="btn btnacento" href="../involucrate.html">Sumate a la causa</a>
+        </nav>
+    </header>
+    <h2>¡Rescatá al tigre!</h2>
+
+    <div class="controles">
+        <p>Usa: <span class="tecla">W</span> <span class="tecla">A</span> <span class="tecla">S</span> <span
+                class="tecla">D</span> para moverte</p>
+        <p>Primero rescatá al <span style="color: #FF9800; font-weight: bold;">tigre</span> y luego llevalo al <span
+                style="color: #4CAF50; font-weight: bold;">refugio</span></p>
+    </div>
+
+    <div class="estado-llave" id="estadoLlave">
+        Estado del tigre: <span id="textoEstado">PENDIENTE</span>
+    </div>
+
+    <div class="mapa" id="mapa"></div>
+
+    <div class="modal" id="modalVictoria">
+        <div class="modal-contenido">
+            <h2>¡Felicidades! 🎉</h2>
+            <p>Has completado el nivel exitosamente.</p>
+            <p>¡Rescataste al tigre y lo llevaste a El Refugio de Guardianes del bosque!</p>
+            <button class="btn-reiniciar" onclick="reiniciarJuego()">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modalSinLlave">
+        <div class="modal-contenido">
+            <h2>¡Necesitas rescatar al tigre primero! 🐯</h2>
+            <p>No puedes pasar sin antes rescatar al tigre.</p>
+            <p>Busca al tigre naranja que está girando.</p>
+            <button class="btn-reiniciar" onclick="cerrarModalSinLlave()">Continuar</button>
+        </div>
+    </div>
+
+    <script>
+        // Configuración
+        const TAM = 30;
+        const FILAS = 15;
+        const COLUMNAS = 20;
+        const VELOCIDAD = 5;
+
+        // Elementos
+        const mapa = document.getElementById('mapa');
+        const modalVictoria = document.getElementById('modalVictoria');
+        const modalSinLlave = document.getElementById('modalSinLlave');
+        const estadoLlave = document.getElementById('estadoLlave');
+        const textoEstado = document.getElementById('textoEstado');
+
+        const personaje = document.createElement('div');
+        const meta = document.createElement('div');
+        const tigre = document.createElement('div');
+
+        personaje.className = 'personaje';
+        meta.className = 'meta';
+        tigre.className = 'tigre';
+
+        // Estado del jugador
+        let px = 2, py = 12;
+        let vx = 0, vy = 0;
+        let juegoActivo = true;
+        let tigreRescatado = false;
+        let tigreSiguiendo = false;
+        let posicionesTigre = [];
+        const maxPosicionesTigre = 5; // Número de posiciones que recordará el tigre
+
+        // Posiciones
+        const metaX = 18;
+        const metaY = 2;
+        const tigreX = 5;
+        const tigreY = 5;
+
+        // Mapa (0 = vacío, 1 = sólido)
+        const datosMapa = [
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+            [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        ];
+
+        // Crear mapa visual
+        function crearMapa() {
+            mapa.innerHTML = '';
+            for (let f = 0; f < FILAS; f++) {
+                for (let c = 0; c < COLUMNAS; c++) {
+                    const celda = document.createElement('div');
+                    if (datosMapa[f][c] === 0) {
+                        celda.className = 'celda vacio';
+                    } else if (datosMapa[f][c] === 1) {
+                        celda.className = 'celda solido';
+                    }
+                    mapa.appendChild(celda);
+                }
+            }
+
+            // Posicionar elementos - usando 3px de offset para centrar mejor
+            meta.style.left = (metaX * TAM + 3) + 'px';
+            meta.style.top = (metaY * TAM + 3) + 'px';
+
+            tigre.style.left = (tigreX * TAM + 3) + 'px'; // Cambiado de 5px a 3px
+            tigre.style.top = (tigreY * TAM + 3) + 'px';  // Cambiado de 5px a 3px
+
+            actualizarPosicion();
+            mapa.appendChild(personaje);
+            mapa.appendChild(meta);
+            mapa.appendChild(tigre);
+
+            actualizarEstadoTigre();
+        }
+
+        // Actualizar posición del personaje
+        function actualizarPosicion() {
+            personaje.style.left = (px * TAM + 3) + 'px';
+            personaje.style.top = (py * TAM + 3) + 'px';
+
+            // Actualizar posición del tigre si está siguiendo
+            if (tigreSiguiendo) {
+                // Guardar la posición actual del personaje
+                posicionesTigre.unshift({ x: px, y: py });
+
+                // Mantener solo las últimas posiciones
+                if (posicionesTigre.length > maxPosicionesTigre) {
+                    posicionesTigre.pop();
+                }
+
+                // Mover el tigre a la posición guardada (con retraso)
+                if (posicionesTigre.length > 2) {
+                    const posicionTigre = posicionesTigre[2]; // El tigre sigue con 2 posiciones de retraso
+                    tigre.style.left = (posicionTigre.x * TAM + 3) + 'px'; // Cambiado de 5px a 3px
+                    tigre.style.top = (posicionTigre.y * TAM + 3) + 'px';  // Cambiado de 5px a 3px
+                }
+            }
+        }
+
+        // Actualizar estado visual del tigre
+        function actualizarEstadoTigre() {
+            if (tigreRescatado) {
+                textoEstado.textContent = 'RESCATADO';
+                estadoLlave.className = 'estado-llave llave-obtenida';
+                tigre.style.display = 'block';
+            } else {
+                textoEstado.textContent = 'PENDIENTE';
+                estadoLlave.className = 'estado-llave llave-pendiente';
+                tigre.style.display = 'block';
+            }
+        }
+
+        // Verificar colisión en los 4 lados del cuadrado
+        function hayColision(x, y) {
+            const puntos = [
+                [x, y],
+                [x + 0.8, y],
+                [x, y + 0.8],
+                [x + 0.8, y + 0.8]
+            ];
+
+            return puntos.some(([px, py]) => {
+                const cx = Math.floor(px);
+                const cy = Math.floor(py);
+
+                if (cx < 0 || cx >= COLUMNAS || cy < 0 || cy >= FILAS)
+                    return true;
+
+                return datosMapa[cy][cx] === 1;
+            });
+        }
+
+        // Verificar si el personaje rescata al tigre
+        function verificarTigre() {
+            if (tigreRescatado) return false;
+
+            const personajeCeldaX = Math.floor(px);
+            const personajeCeldaY = Math.floor(py);
+
+            if (personajeCeldaX === tigreX && personajeCeldaY === tigreY) {
+                tigreRescatado = true;
+                tigreSiguiendo = true;
+                tigre.className = 'tigre tigre-siguiendo';
+                actualizarEstadoTigre();
+                return true;
+            }
+            return false;
+        }
+
+        // Verificar si el personaje alcanzó la meta
+        function verificarMeta() {
+            const personajeCeldaX = Math.floor(px);
+            const personajeCeldaY = Math.floor(py);
+
+            if (personajeCeldaX === metaX && personajeCeldaY === metaY) {
+                if (tigreRescatado) {
+                    juegoActivo = false;
+                    mostrarVictoria();
+                } else {
+                    mostrarModalSinTigre();
+                }
+                return true;
+            }
+            return false;
+        }
+
+        // Mostrar modal de victoria
+        function mostrarVictoria() {
+            modalVictoria.style.display = 'flex';
+        }
+
+        // Mostrar modal cuando intenta pasar sin tigre
+        function mostrarModalSinTigre() {
+            modalSinLlave.style.display = 'flex';
+        }
+
+        // Cerrar modal sin tigre
+        function cerrarModalSinLlave() {
+            modalSinLlave.style.display = 'none';
+        }
+
+        // Reiniciar juego
+        function reiniciarJuego() {
+            px = 2;
+            py = 12;
+            vx = 0;
+            vy = 0;
+            juegoActivo = true;
+            tigreRescatado = false;
+            tigreSiguiendo = false;
+            tigre.className = 'tigre';
+            posicionesTigre = [];
+            modalVictoria.style.display = 'none';
+            modalSinLlave.style.display = 'none';
+            actualizarEstadoTigre();
+            actualizarPosicion();
+
+            // Restablecer posición del tigre
+            tigre.style.left = (tigreX * TAM + 3) + 'px'; // Cambiado de 5px a 3px
+            tigre.style.top = (tigreY * TAM + 3) + 'px';  // Cambiado de 5px a 3px
+        }
+
+        // Bucle principal del juego
+        function actualizarJuego() {
+            if (juegoActivo) {
+                let nuevoX = px + vx;
+                let nuevoY = py + vy;
+
+                if (vx !== 0 && !hayColision(nuevoX, py)) {
+                    px = nuevoX;
+                }
+
+                if (vy !== 0 && !hayColision(px, nuevoY)) {
+                    py = nuevoY;
+                }
+
+                actualizarPosicion();
+
+                // Verificar interacciones
+                verificarTigre();
+                verificarMeta();
+            }
+
+            requestAnimationFrame(actualizarJuego);
+        }
+
+        // Controles
+        document.addEventListener('keydown', (e) => {
+            if (!juegoActivo) return;
+
+            switch (e.key) {
+                case 'w': case 'W': case 'ArrowUp': vy = -VELOCIDAD / TAM; break;
+                case 's': case 'S': case 'ArrowDown': vy = VELOCIDAD / TAM; break;
+                case 'a': case 'A': case 'ArrowLeft': vx = -VELOCIDAD / TAM; break;
+                case 'd': case 'D': case 'ArrowRight': vx = VELOCIDAD / TAM; break;
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            switch (e.key) {
+                case 'w': case 'W': case 'ArrowUp':
+                case 's': case 'S': case 'ArrowDown': vy = 0; break;
+                case 'a': case 'A': case 'ArrowLeft':
+                case 'd': case 'D': case 'ArrowRight': vx = 0; break;
+            }
+        });
+
+        // Iniciar juego
+        crearMapa();
+        actualizarJuego();
+    </script>
+    <footer class="footer">
+        <p class="footertitulo">Guardianes del bosque</p>
+
+        <nav class="footernav">
+            <a href="../homeong.html">El Refugio</a>
+            <a href="../nosotros.html">Nosotros</a>
+            <a href="../proyectos.html">Proyectos</a>
+            <a href="../involucrate.html">Involucrate</a>
+            <a href="../contacto.html">Contacto</a>
+            <a href="#">App</a>
+            <a class="btn btnacento" href="../involucrate.html">Sumate a la causa</a>
+        </nav>
+
+        <div class="footerredes">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+
+    </footer>
+</body>
+
+</html>
